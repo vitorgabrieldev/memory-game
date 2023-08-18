@@ -1,18 +1,38 @@
-const showCard = (i) => {
-    showCard ++;
+var cards = [];
+var shows_cards = 0;
+
+function main(i) {
+
+    if (shows_cards !== 1) {
+        shows_cards ++;
+        showCards(i);
+    } else {
+        if (shows_cards == 2) {
+            alert('Error')
+        } else {
+            shows_cards ++;
+            showCards(i)
+            hiddenCards(i);
+        };
+    };
+
+    if (shows_cards == 0) {
+        shows_cards ++;
+        showCards(i);
+    }
+};
+
+function showCards(i) {
     cards.push(i);
-    let card = document.querySelector(`.showID${i}`);
-
-    if(showCard == 2) {
-        disableCards();
-    }; 
+    document.querySelector(`.showID${i}`).classList.remove("hidden-card");
 };
 
-const disableCards = () => {
-    cards.forEach(element => {
-        
-    });
+function hiddenCards(i) {
+    shows_cards = 2;
+    setTimeout(() => {
+        cards.forEach(element => {
+            document.querySelector(`.showID${element}`).classList.add("hidden-card");
+        });
+        shows_cards = 0;
+    }, 1000);
 };
-
-let cards = [];
-let shows_cards = 0;
