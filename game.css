@@ -1,0 +1,46 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgb(240, 240, 240);
+}
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.board-game {
+    position: absolute;
+    width: 95%;
+    height: 92.5%;
+    transform: translate(2.5%,2.5%);
+    border: 1px solid rgb(151, 151, 151);
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.185);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: .5rem;
+}
+
+.card-game {
+    border: 1px solid #000;
+    margin: .3rem;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    border-radius: 8px;
+    transition: .33s;
+    cursor: pointer;
+}
+
+.card-game * i {
+    font-size: 3rem;
+}
+
+/* .card-game:hover {
+    transform: scale(0.9);
+    background: transparent;
+} */
+
+.hidden-card {
+    transform: rotateY(180deg);
+    background: #000;
+}
